@@ -17,43 +17,10 @@
  * THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-html, body {
-    font-family: Roboto, Verdana, sans-serif;
-    color: #212121;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-.text.secondary {
-    color: #9E9E9E;
-}
-.text.divider {
-    color: #E0E0E0;
-}
-.image-circle {
-    width: 108px;
-    height: 108px;
-    border-radius: 100%;
-    background: url('../img/menzel.jpg') center no-repeat;
-    background-size: cover;
-}
-#triangles {
-    margin: 0 auto;
-}
-#header > h1, h2, h3, p {
-    text-align: center;
-}
-#header > h1 {
-    font-size: 42px;
-}
-@media (max-width: 720px) {
-    #header > h1 {
-        font-size: 32px;
-    }
-}
-#header {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateY(-50%) translateX(-50%);
-}
+/**
+ * Created by moritz on 05.06.17.
+ */
+
+var triangles = document.getElementById('triangles');
+// Bottom padding = distance between triangles and headtext
+triangles.style.paddingBottom = window.innerHeight / 6 + "px";

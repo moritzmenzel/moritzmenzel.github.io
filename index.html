@@ -8,14 +8,30 @@
         <meta charset="utf-8">
         <meta name="description" content="moritzmenzel.github.io - Moritz Menzel auf GitHub :)">
 
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
         <link rel="stylesheet" href="css/main.css">
     </head>
 
     <body>
 
-        <div class="circle">
-            <img src="img/menzel.jpg">
+        <div id="triangles"></div>
+
+        <div id="header">
+            <h1 id="dynHead">Hey, I'm Moritz!</h1>
+            <br>
+            <div class="image-circle" style="margin: 0 auto;"></div>
         </div>
+
+        <script src="js/triangles.js"></script>
+        <script src="js/dynamic.js"></script>
+        <script src="js/zoomerang.js"></script>
+
+        <script>
+            Zoomerang.config({
+                bgColor: '#000',
+                bgOpacity: 0
+            }).listen('.image-circle');
+        </script>
 
     </body>
 
