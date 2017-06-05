@@ -22,7 +22,8 @@ html, body {
     color: #212121;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow-x: hidden;
+    scroll-padding: 10px;
 }
 .text.secondary {
     color: #9E9E9E;
@@ -31,8 +32,8 @@ html, body {
     color: #E0E0E0;
 }
 .image-circle {
-    width: 108px;
-    height: 108px;
+    width: 112px;
+    height: 112px;
     border-radius: 100%;
     background: url('../img/menzel.jpg') center no-repeat;
     background-size: cover;
@@ -53,7 +54,40 @@ html, body {
 }
 #header {
     position: absolute;
+    width: 80%;
     top: 50%;
     left: 50%;
     transform: translateY(-50%) translateX(-50%);
+}
+#linkWrapper {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+#links li {
+    padding-right: 15px;
+    display: inline;
+}
+#links li:last-of-type {
+    padding-right: 0;
+}
+#links a, #links a:visited, #links a:active, #links a:focus {
+    color: #1565C0;
+    -webkit-transition: color 0.25s;
+    -moz-transition: color 0.25s;
+    -ms-transition: color 0.25s;
+    -o-transition: color 0.25s;
+    transition: color 0.25s;
+    text-decoration: none;
+}
+#links a:hover {
+    color: #2196F3;
 }

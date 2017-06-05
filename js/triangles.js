@@ -22,7 +22,6 @@
  * Script to calculate and add Triangles to the document
  */
 
-var triangles = [];
 var container = document.getElementById('triangles');
 
 class Triangle {
