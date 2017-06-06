@@ -19,189 +19,163 @@
 
 /**
  * Created by moritz on 05.06.17.
- * Script to calculate and add Triangles to the document
  */
 
+/**
+ * @var materialColors
+ */
+var materialColors = {
+    "yellow": {
+        "50": "#FFFDE7",
+        "100": "#FFF9C4",
+        "200": "#FFF59D",
+        "300": "#FFF176",
+        "400": "#FFEE58",
+        "500": "#FFEB3B",
+        "600": "#FDD835",
+        "700": "#FBC02D",
+        "800": "#F9A825",
+        "900": "#F57F17"
+    },
+    "orange": {
+        "50": "#FFF3E0",
+        "100": "#FFE0B2",
+        "200": "#FFCC80",
+        "300": "#FFB74D",
+        "400": "#FFA726",
+        "500": "#FF9800",
+        "600": "#FB8C00",
+        "700": "#F57C00",
+        "800": "#EF6C00",
+        "900": "#E65100"
+    }
+};
+
+/**
+ * @var container
+ */
 var container = document.getElementById('triangles');
 
+/**
+ * @class Triangle
+ */
+
 class Triangle {
+
+    /**
+     * @function constructor
+     * @param width
+     * @param height
+     * @param color
+     * @param type
+     * @return {*}
+     */
     constructor(width, height, color, type) {
         this.width = width;
         this.height = height;
         this.color = color;
         this.type = type;
-        // init
+
+        // Create DIV for the Triangle to be shown as
         this.element = document.createElement('div');
         this.element.className = "triangle";
         this.element.style.width = this.element.style.height = "0";
 
         return this.setValues();
     }
+
+    /**
+     * @function setValues
+     * @return {Element|*}
+     */
     setValues() {
         switch(this.type) {
             case "topLeft":
+                // right angle is in the top left
                 this.element.style.borderStyle = "solid";
                 this.element.style.borderWidth = this.width+"px "+this.height+"px 0 0";
                 this.element.style.borderColor = this.color+" transparent transparent transparent";
                 break;
             case "bottomLeft":
+                // right angle is in the bottom left
                 this.element.style.borderStyle = "solid";
                 this.element.style.borderWidth = this.width+"px 0 0 "+this.height+"px";
                 this.element.style.borderColor = "transparent transparent transparent "+this.color;
                 break;
             case "topRight":
+                // right angle is in the top right
                 this.element.style.borderStyle = "solid";
                 this.element.style.borderWidth = this.width+"px "+this.height+"px 0 0";
                 this.element.style.borderColor = this.color+" transparent transparent transparent";
                 break;
             case "bottomRight":
+                // right angle is in the bottom right
                 this.element.style.borderStyle = "solid";
                 this.element.style.borderWidth = "0 0 "+this.width+"px "+this.height+"px";
                 this.element.style.borderColor = "transparent transparent "+this.color+" transparent";
                 break;
         }
-
+        // return div drawn as Triangle
         return this.element;
     }
 }
 
-/** Colors */
+/**
+ * @function setHeadTriangles
+ * @param layer
+ * @return {boolean}
+ */
+function setHeadTriangles(layer) {
+    var tri1, tri2, tri3;
 
-var materialColors = [
-    [
-        "#EF5350",
-        "#F44336",
-        "#E53935"
-    ],
-    [
-        "#F06292",
-        "#EC407A",
-        "#E91E63"
-    ],
-    [
-        "#AB47BC",
-        "#9C27B0",
-        "#8E24AA"
-    ],
-    [
-        "#7E57C2",
-        "#673AB7",
-        "#5E35B1"
-    ],
-    [
-        "#3F51B5",
-        "#3949AB",
-        "#303F9F"
-    ],
-    [
-        "#2196F3",
-        "#1E88E5",
-        "#1976D2"
-    ],
-    [
-        "#03A9F4",
-        "#039BE5",
-        "#0288D1"
-    ],
-    [
-        "#26C6DA",
-        "#00BCD4",
-        "#00ACC1"
-    ],
-    [
-        "#26A69A",
-        "#009688",
-        "#00897B"
-    ],
-    [
-        "#66BB6A",
-        "#4CAF50",
-        "#43A047"
-    ],
-    [
-        "#9CCC65",
-        "#8BC34A",
-        "#7CB342"
-    ],
-    [
-        "#CDDC39",
-        "#C0CA33",
-        "#AFB42B"
-    ],
-    [
-        "#FDD835",
-        "#FBC02D",
-        "#F9A825"
-    ],
-    [
-        "#FFB300",
-        "#FFA000",
-        "#FF8F00"
-    ],
-    [
-        "#FB8C00",
-        "#F57C00",
-        "#EF6C00"
-    ],
-    [
-        "#FF7043",
-        "#FF5722",
-        "#F4511E"
-    ]
-];
+    switch(layer) {
+        case "upper":
+            tri1  = new Triangle(window.innerHeight / 5.5, window.innerWidth * 1.2, materialColors["yellow"][600], "topLeft");
+            tri2 = new Triangle(window.innerHeight / 8, parseInt(window.innerWidth), materialColors["yellow"][700], "topLeft");
+            tri3 = new Triangle(window.innerHeight / 16, window.innerWidth * 0.8, materialColors["yellow"][800], "topLeft");
 
+            // Render
+            tri1.style.position = tri2.style.position = tri3.style.position = "absolute";
+            tri1.style.left = tri1.style.top = 0;
+            tri2.style.left = tri2.style.top = 0;
+            tri3.style.left = tri3.style.top = 0;
 
-/** Generate Colors */
+            break;
+        case "lower":
+            tri1  = new Triangle(window.innerHeight / 5.5, window.innerWidth * 0.8, materialColors["orange"][600], "bottomLeft");
+            tri2 = new Triangle(window.innerHeight / 8, parseInt(window.innerWidth) * 0.6, materialColors["orange"][700], "bottomLeft");
+            tri3 = new Triangle(window.innerHeight / 16, window.innerWidth * 0.4, materialColors["orange"][800], "bottomLeft");
 
-/** DEACTIVATED
+            tri1.style.transform = tri2.style.transform = tri3.style.transform = "rotate(180deg)";
 
-function generateColors(colorList) {
-    var min = 0, max = colorList.length - 1 - 2;
-    var rand = Math.floor(Math.random() * (max - min + 1) + min);
-    var rand2 = Math.floor(Math.random() * (max - min + 1) + min);
-    while(rand2 === rand) {
-        rand2 = Math.floor(Math.random() * (max - min + 1) + min);
+            // Render
+            tri1.style.position = tri2.style.position = tri3.style.position = "absolute";
+            tri1.style.right = tri1.style.top = 0;
+            tri2.style.right = tri2.style.top = 0;
+            tri3.style.right = tri3.style.top = 0;
+
+            break;
+        default:
+            tri1 = tri2 = tri3 = document.createElement('div');
+            console.error("function setTriangles: Wrong value of variable 'layer'." +
+                          "Possible options are 'upper' or 'lower'");
+            break;
     }
-    return [
-        colorList[rand],
-        colorList[rand+2]
-    ]
+
+    container.appendChild(tri1);
+    container.appendChild(tri2);
+    container.appendChild(tri3);
+
+    return true;
 }
 
-var colorset = generateColors(materialColors);
-*/
+/**
+ * @type {Window.onload|Window.onresize}
+ */
+window.onload = window.onresize = function() {
+    // Clear container content before appending new content
+    container.innerHTML = "";
 
-
-/** SET 1 */
-
-var tri1  = new Triangle(window.innerHeight / 5.5, window.innerWidth * 0.8, materialColors[14][0], "bottomLeft");
-var tri2 = new Triangle(window.innerHeight / 8, parseInt(window.innerWidth) * 0.6, materialColors[14][1], "bottomLeft");
-var tri3 = new Triangle(window.innerHeight / 16, window.innerWidth * 0.4, materialColors[14][2], "bottomLeft");
-
-tri1.style.transform = tri2.style.transform = tri3.style.transform = "rotate(180deg)";
-
-// Render
-tri1.style.position = tri2.style.position = tri3.style.position = "absolute";
-tri1.style.right = tri1.style.top = 0;
-tri2.style.right = tri2.style.top = 0;
-tri3.style.right = tri3.style.top = 0;
-
-container.appendChild(tri1);
-container.appendChild(tri2);
-container.appendChild(tri3);
-
-/** SET 2 */
-
-tri1  = new Triangle(window.innerHeight / 5.5, window.innerWidth * 1.2, materialColors[12][0], "topLeft");
-tri2 = new Triangle(window.innerHeight / 8, parseInt(window.innerWidth), materialColors[12][1], "topLeft");
-tri3 = new Triangle(window.innerHeight / 16, window.innerWidth * 0.8, materialColors[12][2], "topLeft");
-
-// Render
-tri1.style.position = tri2.style.position = tri3.style.position = "absolute";
-tri1.style.left = tri1.style.top = 0;
-tri2.style.left = tri2.style.top = 0;
-tri3.style.left = tri3.style.top = 0;
-
-container.appendChild(tri1);
-container.appendChild(tri2);
-container.appendChild(tri3);
+    setHeadTriangles('lower');
+    setHeadTriangles('upper');
+};
