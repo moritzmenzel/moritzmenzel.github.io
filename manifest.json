@@ -4,6 +4,7 @@
   "description": "moritzmenzel.github.io - Moritz Menzel auf GitHub",
   "version": "1.0",
   "start_url": "index.html",
+  "display": "standalone",
   "orientation": "portrait",
   "background_color": "#EEEEEE",
   "theme_color": "#FFC107",
