@@ -58,37 +58,25 @@ var container = document.getElementById('triangles');
 
 /**
  * @class Triangle
+ * @param width
+ * @param height
+ * @param color
+ * @param type
+ * @constructor
  */
 
-class Triangle {
+function Triangle(width, height, color, type) {
+    this.width = width;
+    this.height = height;
+    this.color = color;
+    this.type = type;
 
-    /**
-     * @function constructor
-     * @param width
-     * @param height
-     * @param color
-     * @param type
-     * @return {*}
-     */
-    constructor(width, height, color, type) {
-        this.width = width;
-        this.height = height;
-        this.color = color;
-        this.type = type;
+    // Create DIV for the Triangle to be shown as
+    this.element = document.createElement('div');
+    this.element.className = "triangle";
+    this.element.style.width = this.element.style.height = "0";
 
-        // Create DIV for the Triangle to be shown as
-        this.element = document.createElement('div');
-        this.element.className = "triangle";
-        this.element.style.width = this.element.style.height = "0";
-
-        return this.setValues();
-    }
-
-    /**
-     * @function setValues
-     * @return {Element|*}
-     */
-    setValues() {
+    this.setValues = function() {
         switch(this.type) {
             case "topLeft":
                 // right angle is in the top left
@@ -117,7 +105,9 @@ class Triangle {
         }
         // return div drawn as Triangle
         return this.element;
-    }
+    };
+
+    return this.setValues();
 }
 
 /**
