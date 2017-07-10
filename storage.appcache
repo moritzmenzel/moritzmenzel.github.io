@@ -1,34 +1,34 @@
 CACHE MANIFEST
 # Created by Moritz Menzel @ 06.06.2017
 #
-# VERSION 1.3.1
+# VERSION 1.4.0_deactivated
 
 CACHE:
 # Favicons
-favicon.ico
-favicon.png
+## favicon.ico
+## favicon.png
 
 # HTML Files
-index.html
+## index.html
 
 # Images
-img/menzel.jpg
-img/app_36.png
-img/app_48.png
-img/app_72.png
-img/app_96.png
-img/app_128.png
-img/app_144.png
-img/app_192.png
+## img/menzel.jpg
+## img/app_36.png
+## img/app_48.png
+## img/app_72.png
+## img/app_96.png
+## img/app_128.png
+## img/app_144.png
+## img/app_192.png
 
 # Stylesheets
-css/main.min.css
-css/roboto.min.css
+## css/main.min.css
+## css/roboto.min.css
 
 # JavaScript Files
-js/dynamic.min.js
-js/triangles.min.js
-js/zoomerang.min.js
+## js/dynamic.min.js
+## js/triangles.min.js
+## js/zoomerang.min.js
 
 # Additional Files
-manifest.json
+## manifest.json
