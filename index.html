@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
     <head>
-
+        <meta charset="utf-8">
+        <meta http-quiv"content-type" content="text/html; charset=utf-8">
         <title>Moritz Menzel</title>
         <meta name="author" content="Moritz Menzel">
+        <meta name="description" content="Moritz Menzel - GitHub Pages">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-        <meta charset="utf-8">
-        <meta name="description" content="moritzmenzel.github.io - Moritz Menzel auf GitHub :)">
 
         <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
         <link rel="icon" type="image/png" href="favicon.png" sizes="32x32">
@@ -15,53 +15,27 @@
         <link rel="manifest" href="manifest.json">
 
         <!-- See https://goo.gl/qRE0vM -->
-        <meta name="theme-color" content="#FFC107">
-
-        <!-- DO NOT add to homescreen for Chrome on Android. Fallback for manifest.json -->
-        <meta name="mobile-web-app-capable" content="yes">
-        <meta name="application-name" content="moritzmenzel.github.io">
-
-        <!-- Add to homescreen for Safari on iOS -->
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-        <meta name="apple-mobile-web-app-title" content="moritzmenzel.github.io">
+        <meta name="theme-color" content="#607d8b">
 
         <link rel="stylesheet" href="css/roboto.min.css">
-        <link rel="stylesheet" href="css/main.min.css">
+        <link rel="stylesheet" href="css/main.css">
     </head>
 
     <body>
+      <div id="content">
+        <div class="vertical-center">
+          <h1 class="center">Hey, I'm Moritz</h1>
+          <!-- <img src="img/menzel.png" class="center image"> -->
+          <div id="spacer"></div>
 
-        <div id="triangles"></div>
-
-        <div id="header">
-            <h1 id="dynHead">Hey, I'm Moritz!</h1>
-            <br>
-            <div class="image-circle" style="margin: 0 auto;"></div>
-            <br><br>
+          <ul id="links">
+            <li><a href="https://github.com/moritzmenzel" title="GitHub"><img src="img/github.svg" class="hyper-svg"></a></li>
+            <li><a href="https://instagram.com/moritzmenzel99" title="Instagram"><img src="img/instagram.svg" class="hyper-svg"></a></li>
+            <li><a href="https://steamcommunity.com/id/menzelboy" title="Steam"><img src="img/steam.svg" class="hyper-svg"></a></li>
+            <li><a href="mailto:mail@moritzmenzel.me" title="E-Mail"><img src="img/mail.svg" class="hyper-svg"></a></li>
+          </ul>
         </div>
-
-        <!-- Social -->
-        <div align="center" id="linkWrapper">
-            <ul id="links">
-                <li><a href="https://github.com/moritzmenzel/#/new/list/1">GitHub</a></li>
-                <li><a href="https://moritz-php.lima-city.de/">Blog</a></li>
-                <li><a href="https://youtube.com/menzelgamingtv/">YouTube</a></li>
-                <li><a href="https://instagram.com/moritzmenzel99/">Instagram</a></li>
-            </ul>
-        </div>
-
-        <script src="js/triangles.min.js"></script>
-        <script src="js/dynamic.min.js"></script>
-        <script src="js/zoomerang.min.js"></script>
-
-        <script>
-            Zoomerang.config({
-                bgColor: '#000',
-                bgOpacity: 0
-            }).listen('.image-circle');
-        </script>
-
+      </div>
     </body>
 
 </html>

@@ -1,94 +1,64 @@
-/*
- * Copyright (c) 2017 Moritz Menzel.
- * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
- * associated documentation files (the "Software"), to deal in the Software without restriction, including
- * without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to
- * the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in all copies or substantial
- * portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
- * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
- * PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
- * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
- * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH
- * THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- */
-
 html, body {
     font-family: Roboto, Verdana, sans-serif;
     color: #212121;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    scroll-padding: 10px;
     background-color: #EEEEEE;
 }
-.text.secondary {
-    color: #9E9E9E;
+h1 {
+  font-size: 48px;
 }
-.text.divider {
-    color: #E0E0E0;
+a {
+  text-decoration: none;
 }
-.image-circle {
-    width: 112px;
-    height: 112px;
-    border-radius: 100%;
-    background: url('../img/menzel.jpg') center no-repeat;
-    background-size: cover;
+.center {
+  text-align: center;
 }
-#triangles {
-    margin: 0 auto;
+.vertical-center {
+  margin: 0;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
 }
-#header > h1, h2, h3, p {
-    text-align: center;
+.hyper-svg {
+  padding: 12px;
+  width: 54px;
+  height: 54px;
 }
-#header > h1 {
-    font-size: 42px;
-}
-@media (max-width: 720px) {
-    #header > h1 {
-        font-size: 32px;
-    }
-}
-#header {
-    position: absolute;
-    width: 80%;
-    top: 50%;
-    left: 50%;
-    transform: translateY(-50%) translateX(-50%);
-}
-#linkWrapper {
-    width: 100%;
-    height: auto;
-    position: absolute;
-    bottom: 16px;
-    left: 50%;
-    transform: translateX(-50%);
+
+#content {
+  margin: 0;
+  padding: 0;
 }
 #links {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  margin: 0;
 }
 #links li {
-    padding-right: 15px;
-    display: inline;
+  display: inline;
+  margin: 0 24px 0 24px;
 }
-#links li:last-of-type {
-    padding-right: 0;
+#spacer {
+  height: 240px;
 }
-#links a, #links a:visited, #links a:active, #links a:focus {
-    color: #1565C0;
-    -webkit-transition: color 0.25s;
-    -moz-transition: color 0.25s;
-    -ms-transition: color 0.25s;
-    -o-transition: color 0.25s;
-    transition: color 0.25s;
-    text-decoration: none;
-}
-#links a:hover {
-    color: #2196F3;
+
+@media screen and (max-width: 560px){
+  h1 {
+    font-size: 42px;
+  }
+  .hyper-svg {
+    width: 48px;
+    height: 48px;
+  }
+  #links li {
+    margin: 0 8px 0 8px;
+  }
+  #spacer {
+    height: 180px;
+  }
 }
