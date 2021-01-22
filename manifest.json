@@ -6,6 +6,6 @@
   "start_url": "index.html",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#EEEEEE",
+  "background_color": "#f5f5f5",
   "theme_color": "#212121",
 }
