@@ -59,6 +59,26 @@ a {
     margin: 0 8px 0 8px;
   }
   #spacer {
+    height: 220px;
+  }
+}
+@media screen and (max-width: 420px){
+  h1 {
+    font-size: 36px;
+  }
+  .hyper-svg {
+    width: 42px;
+    height: 42px;
+  }
+  #links li {
+    margin: 0 4px 0 4px;
+  }
+  #spacer {
     height: 180px;
+  }
+}
+@media screen and (max-height: 480px){
+  #spacer {
+    height: 90px;
   }
 }
